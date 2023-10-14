@@ -1,0 +1,34 @@
+
+
+<div style="padding: 2pc;">
+    <button  class="btn btn-sm btn-danger" (click)="GetAdmin()">BacktoAdminPage</button>
+</div>
+
+
+<h1>Display List of Medicine</h1>
+ 
+<button style="margin-left:40%; margin-bottom: 2%; font-size: 1.25rem;" type="button" class="btn btn-warning" routerLink="create-medicine">Add Medicine</button>
+
+<div class="container col-md-6">
+    <table class="table" >
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>imageName</th>
+            <th>category</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+        <tr *ngFor="let medilist of medicineList" ><td>{{medilist.id}}</td><td>{{medilist.name}}</td><td>{{medilist.price}}</td><td>{{medilist.imageName}}</td><td>{{medilist.category}}</td>
+
+           <td>
+             <button (click)="updateMedicine(medilist.id)" class="btn btn-sm btn-info" >Update</button>
+          </td>
+         <td>
+            <button  (click)="deleteMedicine(medilist.id)"  class="btn btn-sm btn-danger"> Delete</button>
+         </td>
+        </tr>
+    </table>
+</div>
